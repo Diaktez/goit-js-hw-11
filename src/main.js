@@ -32,9 +32,7 @@ function handleSubmit(event) {
   clearGallery();
 
   getImagesByQuery(query)
-    .then(res => {
-      const images = res.data.hits;
-
+    .then(images => {
       if (images.length === 0) {
         iziToast.warning({
           title: 'No Results',
@@ -47,7 +45,7 @@ function handleSubmit(event) {
 
       createGallery(images);
     })
-    .catch(() => {
+    .catch(error => {
       iziToast.error({
         title: 'Error',
         message: 'Something went wrong. Please try again later.',

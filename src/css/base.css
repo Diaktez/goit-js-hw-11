@@ -115,6 +115,12 @@ body {
 
 }
 
+@media (max-width: 767px) {
+  .gallery li {
+    width: calc((100% - 24px) / 2);
+  }
+}
+
 .gallery-item:hover {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
